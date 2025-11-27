@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellum Containers - Premium Steel Lunch Boxes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 1.5rem 0;
+            border-bottom: 3px solid #3a7ca5;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c2c2c;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #2c2c2c;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3a7ca5;
+        }
+
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23666" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: #3a7ca5;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #2c5f7f;
+        }
+
+        .product-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: white;
+        }
+
+        .product-section h2 {
+            font-size: 2.5rem;
+            color: #2c2c2c;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-details h3 {
+            font-size: 1.8rem;
+            color: #3a7ca5;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .product-details ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .product-details li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1.1rem;
+        }
+
+        .product-details li:before {
+            content: "▪ ";
+            color: #3a7ca5;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .specs {
+            background: #2c2c2c;
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .specs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .specs h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .spec-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .spec-item h3 {
+            color: #3a7ca5;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-item p {
+            font-size: 1.1rem;
+        }
+
+        .contact {
+            max-width: 600px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: white;
+        }
+
+        .contact h2 {
+            text-align: center;
+            color: #2c2c2c;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c2c2c;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            background: #f9f9f9;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3a7ca5;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #3a7ca5;
+            color: white;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #2c5f7f;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">STELLUM CONTAINERS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#product">Product</a></li>
+                <li><a href="#specs">Specs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Stellum Containers</h1>
+        <p>Premium Steel Lunch Boxes Built to Last</p>
+        <a href="#contact" class="cta-button">Order Now</a>
+    </section>
+
+    <section class="product-section" id="product">
+        <h2>The Steel Standard</h2>
+        <div class="product-grid">
+            <div>
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'><rect fill='%23ddd' width='600' height='400'/><text x='50%25' y='50%25' fill='%23999' text-anchor='middle' font-size='20'>Steel Container Image</text></svg>" alt="Stellum Steel Container" class="product-image">
+            </div>
+            <div class="product-details">
+                <h3>Built for Life</h3>
+                <p>Our steel sandwich boxes are engineered for durability and functionality. No plastic, no compromises. Just pure, reliable steel construction that keeps your food fresh and your container lasting for years.</p>
+                <ul>
+                    <li>100% Stainless Steel Construction</li>
+                    <li>Leak-Resistant Seal</li>
+                    <li>Dishwasher Safe</li>
+                    <li>BPA & Plastic Free</li>
+                    <li>Lifetime Durability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="specs" id="specs">
+        <div class="specs-container">
+            <h2>Specifications</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h3>Material</h3>
+                    <p>304 Stainless Steel</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Capacity</h3>
+                    <p>1200ml</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Weight</h3>
+                    <p>350g</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Warranty</h3>
+                    <p>Lifetime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Stellum Containers. Built to Last.</p>
+    </footer>
+</body>
+</html>
